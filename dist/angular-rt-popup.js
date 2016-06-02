@@ -12,7 +12,7 @@ angular.module('rt.popup', [])
                 mouseDownInsidePopup = null;
                 return;
             }
-            if ( (mouseDownInsidePopup === null || mouseDownInsidePopup === false) && openedPopup && !$.contains(openedPopup.el[0], e.target)) {
+            if ( (mouseDownInsidePopup === null || mouseDownInsidePopup === false) && openedPopup && !jQuery.contains(openedPopup.el[0], e.target)) {
                 mouseDownInsidePopup = null;
                 hidePopup();
             }
@@ -20,7 +20,7 @@ angular.module('rt.popup', [])
 
         function checkMouseDown(e) {
             if (openedPopup) {
-                mouseDownInsidePopup = $.contains(openedPopup.el[0], e.target);
+                mouseDownInsidePopup = jQuery.contains(openedPopup.el[0], e.target);
             }
         }
 
@@ -235,7 +235,7 @@ angular.module('rt.popup', [])
             body.append(element);
 
             // Add arrow
-            var arrow = $('<div />', { 'class': 'arrow' });
+            var arrow = jQuery('<div />', { 'class': 'arrow' });
             element.children('.arrow').remove();
             element.append(arrow);
 
